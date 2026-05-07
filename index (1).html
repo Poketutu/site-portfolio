@@ -1,0 +1,529 @@
+<!--
+  ================================================
+  PROJETO DE PORTFÓLIO — Desenvolvimento Front-End
+  ================================================
+  Projeto    : Flowly — Landing Page de App fictício
+  Descrição  : Landing page moderna com glassmorphism,
+               cursor customizado, parallax, animações
+               de scroll e toggle de pricing.
+  Tecnologias: HTML5, CSS3, JavaScript ES6+ (puro)
+  ================================================
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flowly — Organize. Foque. Entregue.</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Cursor customizado -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Textura de ruído -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header id="header">
+    <nav class="nav container">
+      <a href="#hero" class="logo" aria-label="Flowly">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="16" fill="url(#navLg)"/>
+            <path d="M10 16c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="16" cy="22" r="2.5" fill="white"/>
+            <defs>
+              <linearGradient id="navLg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#7C3AED"/><stop offset="1" stop-color="#06B6D4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        flowly
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#pricing">Preços</a></li>
+        <li><a href="#depoimentos">Reviews</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#" class="btn-nav-ghost">Entrar</a>
+        <a href="#pricing" class="btn-nav-primary">Começar grátis</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <ul role="list">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#pricing">Preços</a></li>
+        <li><a href="#depoimentos">Reviews</a></li>
+        <li><a href="#pricing" class="mobile-cta">Começar grátis →</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero" class="hero">
+    <div class="orb orb-violet" aria-hidden="true"></div>
+    <div class="orb orb-cyan" aria-hidden="true"></div>
+    <div class="orb orb-pink" aria-hidden="true"></div>
+
+    <div class="hero-inner container">
+      <div class="hero-content">
+        <div class="hero-eyebrow reveal">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          Novo — Flowly 2.0 chegou
+        </div>
+
+        <h1 class="hero-title reveal delay-1">
+          Organize.<br/>
+          <span class="title-gradient">Foque.</span><br/>
+          Entregue.
+        </h1>
+
+        <p class="hero-desc reveal delay-2">
+          O app de produtividade que se adapta ao seu jeito de trabalhar. Tarefas, metas e foco — tudo em um só lugar, sem fricção.
+        </p>
+
+        <div class="hero-cta reveal delay-3">
+          <a href="#pricing" class="btn-hero-primary">
+            <span>Começar de graça</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#como-funciona" class="btn-hero-ghost">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <circle cx="16" cy="16" r="15" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+              <path d="M13 11l6 5-6 5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Ver demo
+          </a>
+        </div>
+
+        <div class="hero-social-proof reveal delay-4">
+          <div class="avatars" aria-hidden="true">
+            <span style="background:linear-gradient(135deg,#f97316,#ec4899)">A</span>
+            <span style="background:linear-gradient(135deg,#06b6d4,#6366f1)">M</span>
+            <span style="background:linear-gradient(135deg,#10b981,#3b82f6)">R</span>
+            <span style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">L</span>
+          </div>
+          <div class="proof-text">
+            <div class="stars" aria-label="5 estrelas">★★★★★</div>
+            <span>+12.000 pessoas já usam o Flowly</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mockup do app -->
+      <div class="hero-mockup reveal delay-2" aria-hidden="true">
+        <div class="mockup-phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="app-header">
+              <span class="app-greeting">Bom dia, Ana 👋</span>
+              <span class="app-date">Seg, 5 Mai</span>
+            </div>
+            <div class="app-progress">
+              <div class="progress-label">
+                <span>Progresso de hoje</span>
+                <span class="progress-pct">73%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill"></div></div>
+            </div>
+            <div class="app-tasks">
+              <div class="task-item done">
+                <span class="task-check">✓</span>
+                <span>Reunião com cliente</span>
+                <span class="task-tag design">Design</span>
+              </div>
+              <div class="task-item done">
+                <span class="task-check">✓</span>
+                <span>Revisar proposta</span>
+                <span class="task-tag dev">Dev</span>
+              </div>
+              <div class="task-item active-task">
+                <span class="task-check pulse-ring"></span>
+                <span>Protótipo no Figma</span>
+                <span class="task-tag design">Design</span>
+              </div>
+              <div class="task-item">
+                <span class="task-check empty"></span>
+                <span>Deploy produção</span>
+                <span class="task-tag dev">Dev</span>
+              </div>
+              <div class="task-item">
+                <span class="task-check empty"></span>
+                <span>Weekly report</span>
+                <span class="task-tag mkt">Mkt</span>
+              </div>
+            </div>
+            <div class="app-focus">
+              <div class="focus-label">Modo Foco</div>
+              <div class="focus-timer">24:00</div>
+              <div class="focus-btn">▶ Iniciar</div>
+            </div>
+          </div>
+        </div>
+        <div class="float-card card-streak">🔥 <strong>14 dias</strong> em sequência!</div>
+        <div class="float-card card-done"><span class="done-icon">✓</span> Tarefa concluída</div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator reveal delay-4" aria-label="Role para baixo">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ===================== LOGOS ===================== -->
+  <section class="logos-strip">
+    <div class="container">
+      <p class="logos-label">Usado por equipes em empresas como</p>
+      <div class="logos-track">
+        <div class="logos-inner" aria-hidden="true">
+          <span>Nubank</span><span>RD Station</span><span>Hotmart</span>
+          <span>Conta Azul</span><span>Pipefy</span><span>Resultados Digitais</span>
+          <span>Nubank</span><span>RD Station</span><span>Hotmart</span>
+          <span>Conta Azul</span><span>Pipefy</span><span>Resultados Digitais</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== FEATURES ===================== -->
+  <section id="features" class="features section-pad">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Features</span>
+        <h2>Tudo que você precisa.<br/><em>Nada que te atrapalha.</em></h2>
+        <p>Cada funcionalidade foi pensada para remover fricção e te deixar em estado de fluxo.</p>
+      </div>
+
+      <div class="features-bento">
+        <div class="bento-card bento-big reveal delay-1">
+          <div class="bento-icon">⚡</div>
+          <h3>Foco Profundo</h3>
+          <p>Timer Pomodoro integrado com bloqueio de distrações. Entre no fluxo e saia com o trabalho feito.</p>
+          <div class="bento-visual">
+            <div class="timer-ring">
+              <svg viewBox="0 0 100 100" aria-hidden="true">
+                <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(124,58,237,.15)" stroke-width="8"/>
+                <circle cx="50" cy="50" r="42" fill="none" stroke="url(#timerGrad)" stroke-width="8"
+                  stroke-dasharray="264" stroke-dashoffset="70" stroke-linecap="round"
+                  transform="rotate(-90 50 50)"/>
+                <defs>
+                  <linearGradient id="timerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#7C3AED"/>
+                    <stop offset="100%" stop-color="#06B6D4"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="timer-text">24:00</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-card reveal delay-2">
+          <div class="bento-icon">📋</div>
+          <h3>Tarefas Inteligentes</h3>
+          <p>Organize por projeto, prioridade ou prazo com drag & drop intuitivo.</p>
+          <div class="bento-mini-tasks">
+            <div class="mini-task"><span class="mini-dot done-dot"></span> Redesign homepage</div>
+            <div class="mini-task"><span class="mini-dot active-dot"></span> API integration</div>
+            <div class="mini-task"><span class="mini-dot"></span> User testing</div>
+          </div>
+        </div>
+
+        <div class="bento-card reveal delay-3">
+          <div class="bento-icon">📊</div>
+          <h3>Analytics de Produtividade</h3>
+          <p>Veja seus padrões de trabalho e melhore semana a semana.</p>
+          <div class="bento-chart" aria-hidden="true">
+            <div class="bar-group">
+              <div class="bar" style="--h:40%"></div>
+              <div class="bar" style="--h:65%"></div>
+              <div class="bar" style="--h:50%"></div>
+              <div class="bar" style="--h:80%"></div>
+              <div class="bar" style="--h:60%"></div>
+              <div class="bar bar-active" style="--h:90%"></div>
+              <div class="bar" style="--h:45%"></div>
+            </div>
+            <div class="chart-labels">
+              <span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span><span>D</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-card reveal delay-1">
+          <div class="bento-icon">🔔</div>
+          <h3>Notificações Inteligentes</h3>
+          <p>Alertas no momento certo. Silêncio quando você precisa focar.</p>
+        </div>
+
+        <div class="bento-card bento-wide reveal delay-2">
+          <div class="bento-icon">🤝</div>
+          <h3>Colaboração em tempo real</h3>
+          <p>Compartilhe projetos, delegue tarefas e acompanhe o progresso do time — tudo sincronizado ao vivo.</p>
+          <div class="collab-avatars" aria-hidden="true">
+            <span style="background:linear-gradient(135deg,#f97316,#ec4899)">B</span>
+            <span style="background:linear-gradient(135deg,#06b6d4,#6366f1)">C</span>
+            <span style="background:linear-gradient(135deg,#10b981,#3b82f6)">D</span>
+            <span class="collab-more">+8</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== COMO FUNCIONA ===================== -->
+  <section id="como-funciona" class="como-funciona section-pad">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Como funciona</span>
+        <h2>Em 3 passos você<br/><em>já está no fluxo.</em></h2>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card reveal delay-1">
+          <div class="step-number">01</div>
+          <div class="step-icon-big">🚀</div>
+          <h3>Crie sua conta</h3>
+          <p>Cadastro em 30 segundos. Sem cartão de crédito. Comece com o plano gratuito e migre quando quiser.</p>
+        </div>
+        <div class="step-connector reveal delay-2" aria-hidden="true">
+          <div class="connector-line"></div>
+          <span>→</span>
+        </div>
+        <div class="step-card reveal delay-2">
+          <div class="step-number">02</div>
+          <div class="step-icon-big">📝</div>
+          <h3>Adicione seus projetos</h3>
+          <p>Importe do Notion, Trello ou comece do zero. Organize tarefas em segundos com nossos templates.</p>
+        </div>
+        <div class="step-connector reveal delay-3" aria-hidden="true">
+          <div class="connector-line"></div>
+          <span>→</span>
+        </div>
+        <div class="step-card reveal delay-3">
+          <div class="step-number">03</div>
+          <div class="step-icon-big">✨</div>
+          <h3>Entre no fluxo</h3>
+          <p>Ative o modo foco, acompanhe seu progresso e entregue mais — sem estresse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== DEPOIMENTOS ===================== -->
+  <section id="depoimentos" class="depoimentos section-pad">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Reviews</span>
+        <h2>Pessoas reais.<br/><em>Resultados reais.</em></h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="tcard reveal delay-1">
+          <div class="tcard-stars">★★★★★</div>
+          <p>"O Flowly mudou completamente minha relação com o trabalho. Consigo entregar 40% mais sem horas extras."</p>
+          <div class="tcard-author">
+            <div class="tcard-avatar" style="background:linear-gradient(135deg,#7c3aed,#06b6d4)">BM</div>
+            <div><strong>Bruno Martins</strong><span>Designer, Freelancer</span></div>
+          </div>
+        </div>
+
+        <div class="tcard tcard-highlight reveal delay-2">
+          <div class="tcard-stars">★★★★★</div>
+          <p>"Testei todos os apps de produtividade. O Flowly é o único que realmente funciona — simples, bonito e rápido."</p>
+          <div class="tcard-author">
+            <div class="tcard-avatar" style="background:linear-gradient(135deg,#ec4899,#f97316)">CL</div>
+            <div><strong>Camila Lopes</strong><span>Product Manager, Nubank</span></div>
+          </div>
+        </div>
+
+        <div class="tcard reveal delay-3">
+          <div class="tcard-stars">★★★★★</div>
+          <p>"Usamos para gerenciar nosso time de 12 pessoas. A colaboração em tempo real é incrível — todo mundo alinhado."</p>
+          <div class="tcard-author">
+            <div class="tcard-avatar" style="background:linear-gradient(135deg,#10b981,#3b82f6)">RS</div>
+            <div><strong>Rafael Santos</strong><span>CTO, Startup BR</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== PRICING ===================== -->
+  <section id="pricing" class="pricing section-pad">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Preços</span>
+        <h2>Simples e transparente.<br/><em>Sem surpresas.</em></h2>
+        <div class="pricing-toggle reveal">
+          <span class="toggle-label active" id="label-monthly">Mensal</span>
+          <button class="toggle-switch" id="billing-toggle" role="switch" aria-checked="false" aria-label="Alternar para pagamento anual">
+            <span class="toggle-thumb"></span>
+          </button>
+          <span class="toggle-label" id="label-annual">Anual <span class="save-badge">−20%</span></span>
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card reveal delay-1">
+          <div class="price-tier">Gratuito</div>
+          <div class="price-amount">
+            <span class="price-currency">R$</span>
+            <span class="price-value" data-monthly="0" data-annual="0">0</span>
+            <span class="price-period">/mês</span>
+          </div>
+          <p class="price-desc">Perfeito para começar e organizar sua vida pessoal.</p>
+          <ul class="price-features" role="list">
+            <li><span class="feat-check">✓</span> Até 20 tarefas</li>
+            <li><span class="feat-check">✓</span> 2 projetos</li>
+            <li><span class="feat-check">✓</span> Timer Pomodoro</li>
+            <li><span class="feat-check">✓</span> App mobile</li>
+            <li class="feat-off"><span class="feat-x">✗</span> Colaboração</li>
+            <li class="feat-off"><span class="feat-x">✗</span> Analytics</li>
+          </ul>
+          <a href="#" class="btn-price-ghost">Começar grátis</a>
+        </div>
+
+        <div class="price-card price-pro reveal delay-2">
+          <div class="price-popular">⚡ Mais popular</div>
+          <div class="price-tier">Pro</div>
+          <div class="price-amount">
+            <span class="price-currency">R$</span>
+            <span class="price-value" data-monthly="49" data-annual="39">49</span>
+            <span class="price-period">/mês</span>
+          </div>
+          <p class="price-desc">Para freelancers e profissionais que querem mais.</p>
+          <ul class="price-features" role="list">
+            <li><span class="feat-check">✓</span> Tarefas ilimitadas</li>
+            <li><span class="feat-check">✓</span> Projetos ilimitados</li>
+            <li><span class="feat-check">✓</span> Timer + bloqueio de apps</li>
+            <li><span class="feat-check">✓</span> Analytics completo</li>
+            <li><span class="feat-check">✓</span> Colaboração (até 3)</li>
+            <li><span class="feat-check">✓</span> Integrações (Slack, Notion)</li>
+          </ul>
+          <a href="#" class="btn-price-primary">Assinar Pro</a>
+        </div>
+
+        <div class="price-card reveal delay-3">
+          <div class="price-tier">Time</div>
+          <div class="price-amount">
+            <span class="price-currency">R$</span>
+            <span class="price-value" data-monthly="129" data-annual="99">129</span>
+            <span class="price-period">/mês</span>
+          </div>
+          <p class="price-desc">Para equipes que entregam grandes projetos juntos.</p>
+          <ul class="price-features" role="list">
+            <li><span class="feat-check">✓</span> Tudo do Pro</li>
+            <li><span class="feat-check">✓</span> Membros ilimitados</li>
+            <li><span class="feat-check">✓</span> Permissões por função</li>
+            <li><span class="feat-check">✓</span> Dashboard do gestor</li>
+            <li><span class="feat-check">✓</span> Suporte prioritário</li>
+            <li><span class="feat-check">✓</span> SSO + segurança avançada</li>
+          </ul>
+          <a href="#" class="btn-price-ghost">Falar com vendas</a>
+        </div>
+      </div>
+
+      <p class="price-guarantee reveal">🔒 Garantia de 14 dias. Cancele quando quiser. Sem multas.</p>
+    </div>
+  </section>
+
+
+  <!-- ===================== CTA FINAL ===================== -->
+  <section class="cta-final section-pad">
+    <div class="container">
+      <div class="cta-box reveal">
+        <div class="cta-orb cta-orb-1" aria-hidden="true"></div>
+        <div class="cta-orb cta-orb-2" aria-hidden="true"></div>
+        <span class="tag">Comece hoje</span>
+        <h2>Pronto para entrar<br/>no <em>estado de fluxo?</em></h2>
+        <p>Junte-se a mais de 12.000 pessoas que já transformaram sua produtividade com o Flowly.</p>
+        <a href="#pricing" class="btn-hero-primary">
+          <span>Criar conta grátis</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="logo" aria-label="Flowly">
+            <span class="logo-mark">
+              <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="16" fill="url(#ftLg)"/>
+                <path d="M10 16c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="16" cy="22" r="2.5" fill="white"/>
+                <defs>
+                  <linearGradient id="ftLg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#7C3AED"/><stop offset="1" stop-color="#06B6D4"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </span>
+            flowly
+          </a>
+          <p>O app de produtividade que se adapta ao seu jeito de trabalhar.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Twitter">𝕏</a>
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+
+        <nav class="footer-nav" aria-label="Produto">
+          <h4>Produto</h4>
+          <ul><li><a href="#features">Features</a></li><li><a href="#pricing">Preços</a></li><li><a href="#">Changelog</a></li><li><a href="#">Roadmap</a></li></ul>
+        </nav>
+
+        <nav class="footer-nav" aria-label="Empresa">
+          <h4>Empresa</h4>
+          <ul><li><a href="#">Sobre</a></li><li><a href="#">Blog</a></li><li><a href="#">Carreiras</a></li><li><a href="#">Imprensa</a></li></ul>
+        </nav>
+
+        <nav class="footer-nav" aria-label="Suporte">
+          <h4>Suporte</h4>
+          <ul><li><a href="#">Central de ajuda</a></li><li><a href="#">Comunidade</a></li><li><a href="#">Status</a></li><li><a href="#">Contato</a></li></ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Flowly. Todos os direitos reservados.</p>
+        <span class="portfolio-badge">✦ Desenvolvido como projeto de portfólio</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
